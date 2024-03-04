@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable class-methods-use-this */
-import editor from './editor';
+import editor from "./editor";
 
 const commandStack = {
   commandList: [],
@@ -13,7 +13,7 @@ const commandStack = {
         editor.emitCommandListEmpty();
       }
     }
-  },
+  }
 };
 
 /**
@@ -22,11 +22,11 @@ const commandStack = {
  */
 class Command {
   exec() {
-    throw new Error('请实现exec方法！');
+    throw new Error("请实现exec方法！");
   }
 
   undo() {
-    throw new Error('请实现undo方法！');
+    throw new Error("请实现undo方法！");
   }
 }
 
@@ -162,5 +162,5 @@ export {
   RemoveConnectorCommand,
   MoveNodeCommand,
   RenameNodeCommand,
-  PasteNodeCommand,
+  PasteNodeCommand
 };

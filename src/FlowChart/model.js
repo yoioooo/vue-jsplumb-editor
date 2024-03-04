@@ -2,7 +2,7 @@ let FlowChartJson = {
   nodes: [],
   endpoints: [],
   edges: [],
-  head: '',
+  head: ""
 };
 
 export default {
@@ -40,8 +40,8 @@ export default {
 
   getEdgesByPointIds(ids) {
     const data = [];
-    FlowChartJson.edges.forEach((edge) => {
-      ids.forEach((id) => {
+    FlowChartJson.edges.forEach(edge => {
+      ids.forEach(id => {
         if (edge.indexOf(id) > -1) {
           data.push(edge);
         }
@@ -51,7 +51,7 @@ export default {
   },
 
   removeEdgesByPointIds(ids) {
-    ids.forEach((id) => {
+    ids.forEach(id => {
       FlowChartJson.edges = FlowChartJson.edges.filter(edge => edge.indexOf(id) === -1);
     });
   },
@@ -61,16 +61,18 @@ export default {
   },
 
   getEndpointsByPointIds(ids) {
-    return [...FlowChartJson.endpoints.filter((point) => {
-      if (ids.indexOf(point.id) > -1) {
-        return true;
-      }
-      return false;
-    })];
+    return [
+      ...FlowChartJson.endpoints.filter(point => {
+        if (ids.indexOf(point.id) > -1) {
+          return true;
+        }
+        return false;
+      })
+    ];
   },
 
   removeEndpointsByPointIds(ids) {
-    ids.forEach((id) => {
+    ids.forEach(id => {
       FlowChartJson.endpoints = FlowChartJson.endpoints.filter(point => point.id !== id);
     });
   },
@@ -87,5 +89,5 @@ export default {
 
   getHead() {
     return FlowChartJson.head;
-  },
+  }
 };

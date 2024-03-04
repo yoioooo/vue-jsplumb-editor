@@ -19,7 +19,7 @@ Event.prototype = {
       return false;
     }
 
-    fns.forEach((fn) => {
+    fns.forEach(fn => {
       fn.apply(this, args);
     });
     return false;
@@ -43,7 +43,7 @@ Event.prototype = {
       }
     }
     return false;
-  },
+  }
 };
 
 export const EventCenter = new Event();
